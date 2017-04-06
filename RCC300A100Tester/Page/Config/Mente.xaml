@@ -1,0 +1,114 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="RCC300A100Tester.Mente"
+	xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	Unloaded="Page_Unloaded" Height="414" Loaded="Page_Loaded" Width="788">
+
+    <Page.Resources>
+        <Style TargetType="Label">
+            <!--<Style.Setters>コンテンツプロパティのため省略可能-->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Opacity" Value="0.7"/>
+            <!--<Setter Property="Effect">
+				<Setter.Value>
+					<DropShadowEffect Direction="0" Color="Aqua"  BlurRadius="10" ShadowDepth="0"/>
+				</Setter.Value>
+			</Setter>-->
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <!--<Style.Setters>コンテンツプロパティのため省略可能-->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Opacity" Value="0.7"/>
+            <!--<Setter Property="Effect">
+				<Setter.Value>
+					<DropShadowEffect Direction="0" Color="Aqua"  BlurRadius="15" ShadowDepth="0"/>
+				</Setter.Value>
+			</Setter>-->
+        </Style>
+    </Page.Resources>
+    <Canvas Margin="0,0,10,127">
+        <Grid x:Name="LayoutRoot" HorizontalAlignment="Left" Canvas.Top="50" Canvas.Left="6">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="270"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="出力系 　　※タッチするとON/OFFできるよ（P52～56は制御不可）" FontSize="18" Grid.Row="0"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <StackPanel Grid.Column="0" Width="135" HorizontalAlignment="Left">
+                    <Label  Background="{Binding P00Value}" Name="P00" Content="P00 K100,101" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label  Background="{Binding P01Value}" Name="P01" Content="P01 K102,103" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label  Background="{Binding P02Value}" Name="P02" Content="P02 K104,105" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label  Background="{Binding P03Value}" Name="P03" Content="P03 K106" MouseLeftButtonDown="_MouseLeftButtonDown" />
+                    <Label  Background="{Binding P04Value}" Name="P04" Content="P04 合格印" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label  Background="{Binding P05Value}" Name="P05" Content="P05 K1" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label  Background="{Binding P06Value}" Name="P06" Content="P06 K2" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label  Background="{Binding P07Value}" Name="P07" Content="P07 K3" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Width="135">
+
+                    <Label Background="{Binding P10Value}" Name="P10" Content="P10 K4" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P11Value}" Name="P11" Content="P11 K5" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P12Value}" Name="P12" Content="P12 K6" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P13Value}" Name="P13" Content="P13 K7" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P14Value}" Name="P14" Content="P14 K8" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P15Value}" Name="P15" Content="P15 K9" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P16Value}" Name="P16" Content="P16 K10" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P17Value}" Name="P17" Content="P17 CM" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Width="135">
+
+                    <Label Background="{Binding P20Value}" Name="P20" Content="P20 EDM" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P21Value}" Name="P21" Content="P21 HM" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P22Value}" Name="P22" Content="P22 CIR-TB1" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P23Value}" Name="P23" Content="P23 HIR-TB1" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P24Value}" Name="P24" Content="P24 THW" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P25Value}" Name="P25" Content="P25 ESC1-TB1" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P26Value}" Name="P26" Content="P26 ESH1-TB1" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P27Value}" Name="P27" Content="P27 ESON" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+
+
+                </StackPanel>
+                <StackPanel Grid.Column="3" Width="135">
+                    <Label Background="{Binding P40Value}" Name="P40" Content="P40 ESOFF" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P41Value}" Name="P41" Content="P41 CLS" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P42Value}" Name="P42" Content="P42 CIR-CN10" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P43Value}" Name="P43" Content="P43 HIR-N10" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P44Value}" Name="P44" Content="P44 ESC1-CN10" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P45Value}" Name="P45" Content="P45 ESH1-CN10" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P46Value}" Name="P46" Content="P46 CIR-CN11" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P47Value}" x:Name="P47" Content="P47 HIR-CN11" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+
+                </StackPanel>
+                <StackPanel Grid.Column="4" Width="135">
+                    <Label Background="{Binding P50Value}" Name="P50" Content="P50 ESC1-CN11" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P51Value}" Name="P51" Content="P51 ESH1-CN11" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                    <Label Background="{Binding P52Value}" Name="P52" Content="P52 MP1,2制御A"/>
+                    <Label Background="{Binding P53Value}" Name="P53" Content="P53 MP1,2制御B"/>
+                    <Label Background="{Binding P54Value}" Name="P54" Content="P54 MP1,2制御C"/>
+                    <Label Background="{Binding P55Value}" Name="P55" Content="P55 MP1Enable"/>
+                    <Label Background="{Binding P56Value}" Name="P56" Content="P56 MP2Enable"/>
+                    <Label Background="{Binding AllOffValue}" Name="AllOff" Content="すべてOFF" MouseLeftButtonDown="_MouseLeftButtonDown"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+        <Button x:Name="buttonPow" Controls:ControlsHelper.ContentCharacterCasing="Normal" Style="{DynamicResource SquareButtonStyle}" Content="POW" HorizontalAlignment="Left" Height="30" Grid.Row="1" VerticalAlignment="Top" Width="94" Click="Button_Click" BorderThickness="1" Canvas.Top="7" Canvas.Left="4"/>
+    </Canvas>
+</Page>
