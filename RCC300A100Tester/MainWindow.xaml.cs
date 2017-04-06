@@ -25,7 +25,6 @@ namespace RCC300A100Tester
     /// </summary>
     public partial class MainWindow
     {
-
         DispatcherTimer timerTextInput;
 
         Uri uriTestPage = new Uri("Page/Test/Test.xaml", UriKind.Relative);
